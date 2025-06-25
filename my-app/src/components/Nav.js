@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../images/Logo .svg";
 
 const Nav = () => {
@@ -9,9 +10,9 @@ const Nav = () => {
   };
   return (
     <nav className={`navbar ${menuOpen ? "open" : ""}`}>
-      <a href="/" className="logo">
+      <Link to="/" className="logo">
         <img src={logo} alt="logo" />
-      </a>
+      </Link>
 
       {/* mobile navbar */}
       <div className="menu-icon" onClick={toggleMenu}>
@@ -20,28 +21,25 @@ const Nav = () => {
         <div className="bar"></div>
       </div>
 
-      {/* nav items */}
+      {/* nav links */}
       <ul className={`nav-links ${menuOpen ? "visible" : ""}`}>
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/">About</a>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <a href="/">Services</a>
+          <Link to="/menu">Menu</Link>
         </li>
         <li>
-          <a href="/">Menu</a>
+          <Link to="/booking">Reservations</Link>
         </li>
         <li>
-          <a href="/">Reservations</a>
+          <Link to="/order">Order Online</Link>
         </li>
         <li>
-          <a href="/">Order Online</a>
-        </li>
-        <li>
-          <a href="/">Login</a>
+          <Link to="/login">Login</Link>
         </li>
       </ul>
     </nav>
